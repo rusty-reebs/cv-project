@@ -3,18 +3,33 @@
 import React, { Component } from "react";
 import Mainpage from "./components/Mainpage";
 
+//TODO reorg fields to include input types such as email, ph, date
 const inputs = [
   {
     category: "Personal",
-    fields: ["Name", "Email", "Phone Number"],
+    fields: [
+      { name: "Name", type: "text" },
+      { name: "Email", type: "email" },
+      { name: "Phone Number", type: "number" },
+    ],
   },
   {
     category: "Education",
-    fields: ["Institution Name", "Course Name", "From", "To"],
+    fields: [
+      { name: "Institution Name", type: "text" },
+      { name: "Course Name", type: "text" },
+      { name: "From", type: "date" },
+      { name: "To", type: "date" },
+    ],
   },
   {
     category: "Work Experience",
-    fields: ["Company Name", "Position Title", "From", "Until"],
+    fields: [
+      { name: "Company Name", type: "text" },
+      { name: "Position Title", type: "text" },
+      { name: "From", type: "date" },
+      { name: "Until", type: "date" },
+    ],
   },
 ];
 

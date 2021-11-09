@@ -11,7 +11,7 @@ class InputField extends Component {
     return (
       <div>
         <h3>{this.props.inputfield}</h3>
-        <input type="text" />
+        <input type={this.props.inputtype} />
       </div>
     );
   }
