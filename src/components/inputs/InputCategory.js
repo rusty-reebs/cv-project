@@ -9,16 +9,16 @@ class InputCategory extends Component {
   }
 
   render() {
-    const inputboxes = [];
-    this.props.fields.forEach((obj) => {
-      inputboxes.push(
-        <InputField inputfield={obj.name} inputtype={obj.type} />
+    const inputFields = [];
+    this.props.fields.forEach((field) => {
+      inputFields.push(
+        <InputField inputfield={field.name} inputtype={field.type} />
       );
     });
     return (
       <div>
         <h2>{this.props.category}</h2>
-        {inputboxes}
+        {inputFields}
       </div>
     );
   }

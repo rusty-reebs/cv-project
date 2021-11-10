@@ -10,8 +10,14 @@ class InputField extends Component {
   render() {
     return (
       <div>
+        {/* !! should be label, not h3 */}
         <h3>{this.props.inputfield}</h3>
-        <input type={this.props.inputtype} />
+        <input
+          // onChange={this.handleChange}
+          // value={this.state.name.text}
+          type={this.props.inputtype}
+          // id="nameinput"
+        />
       </div>
     );
   }

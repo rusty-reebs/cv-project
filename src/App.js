@@ -3,7 +3,6 @@
 import React, { Component } from "react";
 import Mainpage from "./components/Mainpage";
 
-//TODO reorg fields to include input types such as email, ph, date
 const inputs = [
   {
     category: "Personal",
@@ -34,10 +33,23 @@ const inputs = [
 ];
 
 class App extends Component {
+  constructor() {
+    super();
+    //! new
+    //TODO read Handling Multiple Inputs on https://reactjs.org/docs/forms.html
+    this.state = {
+      name: {
+        text: "",
+        id: "name",
+      },
+      outputData: [],
+      tester: "pass the state, man!",
+    };
+  }
   render() {
     return (
       <div className="App">
-        <Mainpage inputs={inputs} />
+        <Mainpage inputs={inputs} output={this.state} />
       </div>
     );
   }

@@ -1,7 +1,8 @@
 // Mainpage.js
 
 import React, { Component } from "react";
-import InputForm from "./InputForm";
+import InputForm from "./inputs/InputForm";
+import OutputPage from "./outputs/OutputPage";
 
 class Mainpage extends Component {
   constructor(props) {
@@ -10,14 +11,14 @@ class Mainpage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="mainpage">
         <div className="titlediv">
           <h1>Rusty's Resume Generator</h1>
           <h3>A project written in React and CSS</h3>
         </div>
-        <div>
+        <div className="inputoutput">
           <InputForm inputs={this.props.inputs} />
-          {/* OutputPage */}
+          <OutputPage outputs={this.props.output} />
         </div>
       </div>
     );
