@@ -9,10 +9,20 @@ class InputCategory extends Component {
   }
 
   render() {
+    const valueValues = [];
+    this.props.values.forEach((field) => {
+      valueValues.push(field.value);
+    });
+
     const inputFields = [];
-    this.props.fields.forEach((field) => {
+    this.props.fields.forEach((field, index) => {
       inputFields.push(
-        <InputField inputfield={field.name} inputtype={field.type} />
+        <InputField
+          inputlabel={field.label}
+          inputname={field.name}
+          inputtype={field.type}
+          value={valueValues[index]}
+        />
       );
     });
     return (

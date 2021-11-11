@@ -11,11 +11,12 @@ class InputField extends Component {
     return (
       <div>
         {/* !! should be label, not h3 */}
-        <h3>{this.props.inputfield}</h3>
+        <label>{this.props.inputlabel}</label>
         <input
           // onChange={this.handleChange}
-          // value={this.state.name.text}
+          name={this.props.inputname}
           type={this.props.inputtype}
+          value={this.props.value}
           // id="nameinput"
         />
       </div>

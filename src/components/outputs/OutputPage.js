@@ -7,27 +7,27 @@ const defaults = [
   {
     category: "Personal",
     fields: [
-      { name: "Name", value: "John J. JavaScript" },
-      { name: "Email", value: "johnj@jjj.dev" },
-      { name: "Phone", value: "1-780-672-0934" },
+      { name: "Name", value: "Angus Young" },
+      { name: "Email", value: "angus@acdc.com" },
+      { name: "Phone", value: "1-888-YOU-ROCK" },
     ],
   },
   {
     category: "Education",
     fields: [
-      { name: "Institution", value: "School of Hard Knocks" },
-      { name: "Course", value: "Web Development 101" },
-      { name: "From", value: Date(1 - 1 - 2015) },
-      { name: "To", value: Date(12 - 31 - 2020) },
+      { name: "Institution", value: "The School of Rock" },
+      { name: "Course", value: "Rock Stars 101" },
+      { name: "From", value: 1 - 1 - 1970 },
+      { name: "To", value: 1 - 31 - 1970 },
     ],
   },
   {
     category: "Work Experience",
     fields: [
-      { name: "Company", value: "ACME Development" },
-      { name: "Position", value: "React Developer" },
-      { name: "From", value: Date(1 - 1 - 2021) },
-      { name: "Until", value: Date(12 - 31 - 2021) },
+      { name: "Company", value: "AC/DC" },
+      { name: "Position", value: "Lead Guitar" },
+      { name: "From", value: 1 - 1 - 1970 },
+      { name: "Until", value: 12 - 31 - 2021 },
     ],
   },
 ];
@@ -41,7 +41,12 @@ class OutputPage extends Component {
     const outputCategories = [];
     defaults.forEach((def) => {
       outputCategories.push(
-        <OutputCategory category={def.category} fields={def.fields} />
+        <OutputCategory
+          category={def.category}
+          fields={def.fields}
+          testname={this.props.testname}
+          testvalue={this.props.testvalue}
+        />
       );
     });
     return (

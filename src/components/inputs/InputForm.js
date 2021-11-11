@@ -6,22 +6,11 @@ import InputCategory from "./InputCategory";
 class InputForm extends Component {
   constructor(props) {
     super(props);
-    //   this.state = {
-    //     name: {
-    //       text: "",
-    //       id: "name",
-    //     },
-    //     outputData: [],
-    //   };
   }
 
-  // handleChange = (e) => {
-  //   this.setState({
-  //     name: {
-  //       text: e.target.value,
-  //     },
-  //   });
-  // };
+  handleValueChange = (e) => {
+    this.props.onValueChange(e.target.value);
+  };
 
   // onSubmitForm = (e) => {
   //   e.preventDefault();
@@ -34,12 +23,21 @@ class InputForm extends Component {
   // };
 
   render() {
+    const valueFields = [];
+    this.props.values.forEach((value) => {
+      valueFields.push(value.fields);
+    });
     const formCategories = [];
-    this.props.inputs.forEach((input) => {
+    this.props.inputs.forEach((input, index) => {
       formCategories.push(
-        <InputCategory category={input.category} fields={input.fields} />
+        <InputCategory
+          category={input.category}
+          fields={input.fields}
+          values={valueFields[index]}
+        />
       );
     });
+
     return (
       <div>
         Add your deets!

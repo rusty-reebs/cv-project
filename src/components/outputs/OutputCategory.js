@@ -12,7 +12,12 @@ class OutputCategory extends Component {
     const outputFields = [];
     this.props.fields.forEach((field) => {
       outputFields.push(
-        <OutputField outputfield={field.name} outputvalue={field.value} />
+        <OutputField
+          outputfield={field.name}
+          outputvalue={field.value}
+          testname={this.props.testname}
+          testvalue={this.props.testvalue}
+        />
       );
     });
     return (

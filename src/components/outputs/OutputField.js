@@ -8,7 +8,12 @@ class OutputField extends Component {
   }
 
   render() {
-    return <div>{this.props.outputvalue}</div>;
+    return (
+      <div>
+        {this.props.outputvalue}
+        {this.props.testvalue}
+      </div>
+    );
   }
 }
 
